@@ -3,35 +3,36 @@ from django.db import models
 # Create your models here.
 
 class Player(models.Model):
-    name = models.CharField(max_length=50)
+    number = models.IntegerField(unique=True, null=True, max_length=2, verbose_name="No.")
+    lastname = models.CharField(max_length=50)
+    firstname = models.CharField(max_length=50)
     
     class Meta(object):
         verbose_name_plural = "Players"
-        ordering = ('name',)
+        ordering = ('number',)
     
     def __unicode__(self):
-        return self.name
+        return self.number
     
     def save(self, *args, **kwargs):
-        self.name = self.name.upper()
+        self.lastname = self.lastname.upper()
         super(Player, self).save(*args, **kwargs)
 
-    backimageurl = models.TextField(null=True, max_length=200)
-    imageurl = models.TextField(null=True, max_length=200)
+    hand = models.CharField(null=True, max_length=5)
     position = models.TextField(null=True)
-    jerseyno = models.IntegerField(unique=True, null=True, max_length=2, verbose_name="No.")
+    height = models.CharField(null=True, max_length=3, verbose_name="Height")
+    weight = models.IntegerField(null=True, max_length=3, verbose_name="Weight")
     year = models.CharField(null=True, max_length=30)
     hometown = models.CharField(null=True, max_length=140, verbose_name="Hometown")
     highschool = models.CharField(null=True, max_length=140, verbose_name="High School")
-    instaname =  models.TextField(null=True, verbose_name="Instagram User")
-    major = models.TextField(null=True)
-    backstory = models.TextField(null=True)
+    story = models.TextField(null=True)
+    
     
     class Meta(object):
-        ordering = ('name', 'position')
+        ordering = ('number', 'position')
         
     def __unicode__(self):
-        return U'%s' %(self.name)
+        return U'%s' %(self.number)
     
     
     

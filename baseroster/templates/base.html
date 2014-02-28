@@ -1,16 +1,33 @@
 <!DOCTYPE html>
 
-<html>
+<html lang=en>
 <head>
     <title>{% block title %}Baseball Roster Project{% endblock %}</title>
     <link href="{{ STATIC_URL }}css/bootstrap.css" rel="stylesheet">
+    <link href="{{ STATIC_URL }}css/style.css" rel="stylesheet">
+
 </head>
 
-
 <body>
-    <div class="container">
-        {% block content %}{% endblock %}
-    </div>
     
-</body>    
+     <div class="container">
+        
+        <div class="row topbar">
+            <ul class="nav nav-pills">
+              <li class="active"><a href="#">Left</a></li>
+              <li><a href="#">Left</a></li>
+              <li><a href="#">Left</a></li>
+            </ul>
+        </div>
+    </div>
+   
+        {% block content %}
+        {% endblock %}
+
+    
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+    
+</body>
 </html>
