@@ -13,7 +13,12 @@ def home(request):
     return render(request, "roster/home.html", context)
 
 def player(request, pk):
-    return render(request, "roster/player.html")
+    player_var = Player.objects.get(id=pk)
+    context ={
+        "player":player_var
+    }
+    return render(request, "roster/player.html", context)
+    
 
 def playerList(request, pk):
     player = get_object_or_404(Player, id=pk)

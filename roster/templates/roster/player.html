@@ -11,21 +11,20 @@
 
 <body>
 
-<div class="row">
-    <div class="span12">
-        <img src="http://image.cdnllnwnl.xosnetwork.com/pics33/1024/RL/RLMIOXKDVTLPJEI.20140206200854.jpg" width=100%>
-        {{ name }}
-    </div>
-</div>
-
 <div>
-    <h1>Some guy's name here and here and here and here.</h1>
-    <p>Here is a player description.</p>
+    <h1 class="playername imageClip">{{ player.name }}</h1>
     <img src="{{ STATIC_URL }}img/playerpic-{{ player.number }}.jpg" width=100%>
 </div>
 
-<div>
-    <img src="http://maps.googleapis.com/maps/api/staticmap?center={{ player.home_lat }},{{ player.home_long }}&zoom=12&size=400x400&maptype=terrain&sensor=true" class="img-circle">
+    <img src="http://maps.googleapis.com/maps/api/staticmap?center={{ player.home_lat }},{{ player.home_long }}&zoom=7&size=400x400&maptype=terrain&markers=color:blue%7Clabel:S%7C{{ player.home_lat }},{{ player.home_long }}sensor=true" class="img-circle">
+
+<div class="tab-content">
+  <div class="tab-pane fade in active" id="general">...</div>
+  <div class="tab-pane fade" id="junior">...</div>
+  <div class="tab-pane fade" id="sophomore">...</div>
+  <div class="tab-pane fade" id="freshman">...</div>
+  <div class="tab-pane fade" id="highschool">...</div>
+  <div class="tab-pane fade" id="personal">...</div>
 </div>
 
 </body>    
