@@ -21,11 +21,11 @@
 <div>
     <h1>Some guy's name here and here and here and here.</h1>
     <p>Here is a player description.</p>
-    <img src="{{ STATIC_URL }}img/dudek.jpg" width=100%>
+    <img src="{{ STATIC_URL }}img/playerpic-{{ player.number }}.jpg" width=100%>
 </div>
 
 <div>
-    <img src="http://maps.googleapis.com/maps/api/staticmap?center={{ home_lat }},{{ home_long }}&zoom=12&size=400x400&maptype=terrain&sensor=true">
+    <img src="http://maps.googleapis.com/maps/api/staticmap?center={{ player.home_lat }},{{ player.home_long }}&zoom=12&size=400x400&maptype=terrain&sensor=true" class="img-circle">
 </div>
 
 </body>    

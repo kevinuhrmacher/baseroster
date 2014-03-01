@@ -10,13 +10,11 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-import django
-
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 PROJECT_ROOT = os.path.dirname(__file__)
 PROJECT_PATH = os.path.dirname(PROJECT_ROOT)
 
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-
+#BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
@@ -35,13 +33,15 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = (
     'django.contrib.admin',
+    'django.contrib.admindocs',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     #'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'roster'
+    'django.contrib.humanize',
+    'roster',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -64,7 +64,7 @@ WSGI_APPLICATION = 'baseroster.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(PROJECT_PATH, 'baseroster.db'),
+        'NAME': os.path.join(BASE_DIR, 'dbsqlite3'),
     },
 }
 
@@ -81,32 +81,29 @@ USE_L10N = True
 
 USE_TZ = True
 
-
-
-TEMPLATE_DIRS = (
-    os.path.join(PROJECT_ROOT, 'templates'),
-)
-
-STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, 'static_media'),
-)
-
 MEDIA_ROOT = os.path.join(PROJECT_PATH, 'media_root')
 
 MEDIA_URL = '/media/'
 
 STATIC_ROOT = os.path.join(PROJECT_PATH, 'static_media')
 
+STATIC_URL = '/static/'
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
+
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_ROOT, 'static_media'),
+)
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
-STATIC_URL = '/static/'
+TEMPLATE_DIRS = (
+    os.path.join(PROJECT_ROOT, 'templates'),
+)
 
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
