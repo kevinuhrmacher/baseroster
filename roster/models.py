@@ -53,26 +53,41 @@ class Player(models.Model):
         ordering = ('lastname', 'position')
         
     def __unicode__(self):
-        return U'%s' %(self.lastname)
+        return self.lastname
     
     
     
 class Coach(models.Model):
-    name = models.TextField(null=True)
+    firstname = models.TextField(null=True)
+    lastname = models.TextField(null=True)
     
     class Meta(object):
         verbose_name_plural = "Coaches"
-        ordering = ('name',)
+        ordering = ('lastname','coaching_age')
     
     def __unicode__(self):
-        return self.name
+        return self.lastname
     
     def save(self, *args, **kwargs):
-        self.name = self.name()
-        super(Player, self).save(*args, **kwargs)
+        self.lastname = self.lastname()
+        super(Coach, self).save(*args, **kwargs)
 
-    coachingage = models.CharField(null=True, max_length=2)
-    college = models.TextField(null=True)
-    gradyear = models.CharField(null=True, max_length=4)
-    backstory = models.TextField(null=True)
+    title = models.TextField(null=True)
+    story = models.TextField(null=True)
+    coaching_age = models.IntegerField(null=True, max_length=2)
+
     
+class Team(models.Model):
+    name = models.TextField(unique=False)
+    gender = models.TextField(unique=False)
+    url = models.URLField(unique=False, max_length=400)
+    roster_url = models.URLField(unique=False, max_length=400)
+    
+    class Meta(object):
+        verbose_name_plural = "Teams"
+        
+    def __unicode__(self):
+        return U'%s %s' %(self.name, self.gender)
+        
+    def save(self, *args, **kwargs):
+        self.name = self.name.upper()   

@@ -15,6 +15,7 @@
     <!--<span class="playernumber hidden-phone">{{ player.firstname }}</span>
     <span class="playername hidden-phone">{{ player.lastname }}</span>-->
     <div id=playerimgbox"><img src="{{ STATIC_URL }}img/playerpic-{{ player.number }}.jpg" width="80%" class="player-image"></div>
+    <div class="caption">PHOTOS FROM GOHEELS.COM</div>
 </div>
 
 
@@ -27,7 +28,7 @@
             </div>
     </div>
     <div class="col-md-12">
-            <div class="basicinfo col-md-1"><img src="{{ STATIC_URL }}img/position-{{ player.number }}.jpg" width="100%" class="player-image"></div>
+            <div class="basicinfo col-xs-1"><img src="{{ STATIC_URL }}img/position-{{ player.number }}.jpg" width="100%" class="player-image"></div>
             <div class="basicinfo col-md-2"><span class="statnumber">{{ player.position }}</span><br>Position</div>
             <div class="basicinfo col-md-2"><span class="statnumber">{{ player.dominant_hand }}</span><br>Hand</div>
             <div class="basicinfo col-md-3"><span class="statnumber">{{ player.year }}</span><br>Year</div>
@@ -39,7 +40,7 @@
 <div class="col-md-12">
     
     <div class="col-md-5">
-            <img src="http://maps.googleapis.com/maps/api/staticmap?center={{ player.home_lat }},{{ player.home_long }}&zoom=7&size=600x400&maptype=terrain&sensor=true" class="img-thumbnail homemap">
+            <img src="http://maps.googleapis.com/maps/api/staticmap?center={{ player.home_lat }},{{ player.home_long }}&zoom=7&size=600x400&markers=color:blue%7Clabel:S%7C{{ player_homelat }},{{ player_homelong }}&maptype=terrain&sensor=true" class="img-thumbnail homemap">
             <span class="precol"><b>Hometown:</b> {{ player.hometown }}</span><br>
             <span class="precol">{{ player.high_school }} High School</span>
     </div>

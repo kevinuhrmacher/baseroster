@@ -18,6 +18,9 @@ ul {
     list-style-type: none;
 }
 
+a {
+    color: #609CCC;
+}
 
 #playercontent {
     background-color: #FFFFFF;
@@ -46,17 +49,31 @@ ul {
    font-family: Titillium Web;
    font-weight: 700;
    margin: 10px 0 0 0;
-   text-transform: uppercase;  
+   text-transform: uppercase;
+   display: block;
+   float: right;
 }
 
 #topbar {
     background-color: #535353;
+    border-bottom: solid 2px #C9C8C8;
     width: 100%;
     z-index: 400;
 }
 
+.nav-pills {
+    display: block;
+    float: left;
+}
+
  /* player pages */
  
+.caption {
+    display: block;
+    float: right;
+    font-size: .7em;
+    margin-right: 50px;
+}
     
 .player-image {
     width:100%;
@@ -162,6 +179,29 @@ ul {
 
 .tabhed {
     font-family: Titillium Web;
+}
+
+/* coaching */
+
+.coachsaga {
+    line-height: 20px;
+}
+
+.coachsaga:first-child:first-letter {
+    float: left;
+    color: #609CCC;
+    font-size: 75px;
+    font-weight: 800;
+    line-height: 60px;
+    padding-top: 4px;
+    padding-right: 8px;
+    padding-left: 3px;
+    font-family: Titillium Web;
+}
+
+
+.bottomspace {
+    margin-bottom: 50px;
 }
 
 /* twitter footer */

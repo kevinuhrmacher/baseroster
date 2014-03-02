@@ -14,12 +14,16 @@
       <div class="frame" id="topbar" data-spy="affix" data-offset-top="500">
         <div class="container">
             <div class="row">
-                <ul class="nav nav-pills" id="topbar">
+                <ul class="nav nav-pills">
                   <li class="nav-links"><a href="#">Home</a></li>
                   <li class="nav-links"><a href="#">Baseball</a></li>
                   <li class="nav-links"><a href="#">Sports</a></li>
-                <li class="nav-name">NO.{{ player.number }}&nbsp&nbsp{{ player.firstname }}&nbsp{{ player.lastname }}</li>
                 </ul>
+            <span class="nav-name">{{ player.firstname }}&nbsp{{ player.lastname }}</span>
+            <span class="nav-name">{{ coach.firstname }}&nbsp{{ coach.lastname }}</span>
+            <span class="nav-name">{{ team.name }}</span>
+
+            
             </div>
         </div>
       </div>
