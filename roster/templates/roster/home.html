@@ -3,12 +3,39 @@
 {% load url from future %}
 
 {% block content %}
+<html>
+    
     <div class="player-image">
     <!--<span class="playernumber hidden-phone">{{ player.firstname }}</span>
     <span class="playername hidden-phone">{{ player.lastname }}</span>-->
-    <div id=playerimgbox"><img src="{{ STATIC_URL }}img/team-sports.jpg" width="80%" class="player-image"></div>
+    <div id=playerimgbox"><img src="{{ STATIC_URL }}img/team-sports.jpg" width="100%" class="player-image"></div>
     <div class="caption">PHOTOS FROM GOHEELS.COM</div>
     </div>
     
-    <p><a href="{% url 'roster_home' %}">List of Teams</a></p>
+    <div id="playercontent">
+<div class="row" id="basicinfo">
+    <div class="col-md-10">
+            <div>
+                <h2 class="basicinfohed">Teams</h2>
+            </div>
+    </div>
+    
+    <ul>
+    {% for team in teams %}
+        <li><a href="{{ team.name }}"></a></li>
+    </ul>
+    
+    <div class="col-md-2">
+            <div>
+            </div>
+    </div>
+    
+</div>
+
+<div class="col-md-12 bottomspace">
+    <p class="coachsaga">{{ coach.story }}</p>
+</div>
+   
+</body>
+</html>
 {% endblock %}

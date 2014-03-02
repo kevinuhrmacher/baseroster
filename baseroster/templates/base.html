@@ -15,9 +15,9 @@
         <div class="container">
             <div class="row">
                 <ul class="nav nav-pills">
-                  <li class="nav-links"><a href="#">Home</a></li>
-                  <li class="nav-links"><a href="#">Baseball</a></li>
-                  <li class="nav-links"><a href="#">Sports</a></li>
+                  <li class="nav-links"><a href="{% url 'roster_home' %}">Home</a></li>
+                  <li class="nav-links"><a href="{% url 'roster_home' %}">Players</a></li>
+                  <li class="nav-links"><a href="{% url 'roster_home' %}">Sports</a></li>
                 </ul>
             <span class="nav-name">{{ player.firstname }}&nbsp{{ player.lastname }}</span>
             <span class="nav-name">{{ coach.firstname }}&nbsp{{ coach.lastname }}</span>

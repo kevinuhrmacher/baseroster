@@ -38,9 +38,9 @@
 </div>
 
 <div class="col-md-12">
-    
     <div class="col-md-5">
-            <img src="http://maps.googleapis.com/maps/api/staticmap?center={{ player.home_lat }},{{ player.home_long }}&zoom=7&size=600x400&markers=color:blue%7Clabel:S%7C{{ player_homelat }},{{ player_homelong }}&maptype=terrain&sensor=true" class="img-thumbnail homemap">
+            <img src="http://maps.googleapis.com/maps/api/staticmap?center={{ player.home_lat }},{{ player.home_long }}&zoom=7&size=600x400&
+&markers=color:blue%7Csize:small%7Clabel:%7C{{ player.home_lat }},{{ player.home_long }}&maptype=terrain&sensor=true" class="img-thumbnail homemap">
             <span class="precol"><b>Hometown:</b> {{ player.hometown }}</span><br>
             <span class="precol">{{ player.high_school }} High School</span>
     </div>
@@ -48,7 +48,6 @@
     <div class="col-md-7" id="storytabs">
     <!-- Here goes JS written based on the year of the player -->
     </div>
-    
 </div>
 
 
