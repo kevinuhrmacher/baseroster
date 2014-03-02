@@ -4,17 +4,18 @@ from django.db import models
 
 class Player(models.Model):
     number = models.IntegerField(unique=True, null=True, max_length=2, verbose_name="No.")
-    name = models.CharField(max_length=70)
+    firstname = models.TextField(null=False)
     class Meta(object):
         verbose_name_plural = "Players"
-        ordering = ('name', 'number')
+        ordering = ('lastname', 'number')
     
     def __unicode__(self):
-        return self.name
+        return self.lastname
     
     def save(self, *args, **kwargs):
         super(Player, self).save(*args, **kwargs)
-        
+    
+    lastname = models.TextField(null=False)
     imgurl = models.TextField(null=True)
     dominant_hand = models.CharField(null=True, max_length=3)
     position = models.CharField(null=True, max_length=6)
@@ -40,14 +41,19 @@ class Player(models.Model):
     on_base_percentage = models.CharField(null=True, max_length=5)
     assists = models.CharField(null=True, max_length=5)
     errors = models.CharField(null=True, max_length=5)
-    story = models.TextField(null=True)
+    story_junior = models.TextField(null=True)
+    story_sophomore = models.TextField(null=True)
+    story_freshman = models.TextField(null=True)
+    story_highschool = models.TextField(null=True)
+    story_personal = models.TextField(null=True)
+
     
     
     class Meta(object):
-        ordering = ('name', 'position')
+        ordering = ('lastname', 'position')
         
     def __unicode__(self):
-        return U'%s' %(self.name)
+        return U'%s' %(self.lastname)
     
     
     

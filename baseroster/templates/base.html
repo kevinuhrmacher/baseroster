@@ -9,28 +9,36 @@
 </head>
 
 <body>
-    <div class="viewport">
-      <div class="frame" id="topbar">
+    <div class="viewport tofront">
+    <div><img class="hidden-phone" id="nav-icon" src="{{ STATIC_URL }}img/baseroster-icon.gif"></div>
+      <div class="frame" id="topbar" data-spy="affix" data-offset-top="500">
         <div class="container">
-            <div class="row" data-spy="affix" data-offset-top="700">
+            <div class="row">
                 <ul class="nav nav-pills" id="topbar">
-                <img src="http://image.cdnllnwnl.xosnetwork.com/pics33/1024/RL/RLMIOXKDVTLPJEI.20140206200854.jpg" width="100px" id="navicon">
-                  <li class="active"><a href="#">Home</a></li>
-                  <li><a href="#">Baseball</a></li>
-                  <li><a href="#">Skye Bolt</a></li>
+                  <li class="nav-links"><a href="#">Home</a></li>
+                  <li class="nav-links"><a href="#">Baseball</a></li>
+                  <li class="nav-links"><a href="#">Sports</a></li>
+                <li class="nav-name">NO.{{ player.number }}&nbsp&nbsp{{ player.firstname }}&nbsp{{ player.lastname }}</li>
                 </ul>
             </div>
         </div>
+      </div>
     </div>
-</div>
    
         {% block content %}
         {% endblock %}
 
+    <div id="twitterfooter" class="footer navbar-fixed-bottom">
+        <ul>
+            <li class="footerlinks">Here goes some content</li>
+            <li class="footerlinks">And more</li>
+        </ul>
+    </div>
     
     
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+    <script src="{{ STATIC_URL }}js/roster.js"></script>
     
 </body>
 </html>
