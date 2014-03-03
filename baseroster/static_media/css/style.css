@@ -38,7 +38,7 @@ a:hover {
     width: 100px;
     overflow: inherit;
     position:absolute;
-    left: 20px;
+    left: 30px;
 }
 
 .nav-links {
@@ -69,6 +69,7 @@ a:hover {
 .nav-pills {
     display: block;
     float: left;
+    text-transform: uppercase;
 }
 
  /* player pages */

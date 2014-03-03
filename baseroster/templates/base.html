@@ -10,14 +10,14 @@
 
 <body>
     <div class="viewport tofront">
-    <div><img class="hidden-phone" id="nav-icon" src="{{ STATIC_URL }}img/baseroster-icon.gif"></div>
+    <div><img class="hidden-phone" id="nav-icon" src="{{ STATIC_URL }}img/baseroster-icon.png"></div>
       <div class="frame" id="topbar" data-spy="affix" data-offset-top="500">
         <div class="container">
             <div class="row">
                 <ul class="nav nav-pills">
                   <li class="nav-links"><a href="{% url 'roster_home' %}">Home</a></li>
-                  <li class="nav-links"><a href="{% url 'roster_home' %}">Players</a></li>
-                  <li class="nav-links"><a href="{% url 'roster_home' %}">Sports</a></li>
+                  <li class="nav-links"><a href="{% url 'roster_home' %}">About</a></li>
+                  <li class="nav-links"><a href="{% url 'roster_player_list' %}">Baseball</a></li>
                 </ul>
             <span class="nav-name">{{ player.firstname }}&nbsp{{ player.lastname }}</span>
             <span class="nav-name">{{ coach.firstname }}&nbsp{{ coach.lastname }}</span>
@@ -34,8 +34,7 @@
 
     <div id="twitterfooter" class="footer navbar-fixed-bottom">
         <ul>
-            <li class="footerlinks">Here goes some content</li>
-            <li class="footerlinks">And more</li>
+            <li class="footerlinks">Copyright Kevin Uhrmacher 2014</li>
         </ul>
     </div>
     

@@ -12,8 +12,7 @@
 <body>
 
 <div class="player-image">
-    <!--<span class="playernumber hidden-phone">{{ player.firstname }}</span>
-    <span class="playername hidden-phone">{{ player.lastname }}</span>-->
+
     <div id=playerimgbox"><img src="{{ STATIC_URL }}img/playerpic-{{ player.number }}.jpg" width="80%" class="player-image"></div>
     <div class="caption">PHOTOS FROM GOHEELS.COM</div>
 </div>
@@ -28,12 +27,12 @@
             </div>
     </div>
     <div class="col-md-12">
-            <div class="basicinfo col-xs-1"><img src="{{ STATIC_URL }}img/position-{{ player.number }}.jpg" width="100%" class="player-image"></div>
             <div class="basicinfo col-md-2"><span class="statnumber">{{ player.position }}</span><br>Position</div>
             <div class="basicinfo col-md-2"><span class="statnumber">{{ player.dominant_hand }}</span><br>Hand</div>
             <div class="basicinfo col-md-3"><span class="statnumber">{{ player.year }}</span><br>Year</div>
             <div class="basicinfo col-md-2"><span class="statnumber">{{ player.height }}</span><br>Height</div>
             <div class="basicinfo col-md-2"><span class="statnumber">{{ player.weight }}</span><br>Weight</div>
+            <div class="basicinfo col-xs-1"></div> <!-- <img src="{{ STATIC_URL }}img/position-{{ player.number }}.jpg" width="100%" class="player-image"> -->
     </div>
 </div>
 

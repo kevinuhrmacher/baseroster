@@ -50,7 +50,7 @@ class Player(models.Model):
     
     
     class Meta(object):
-        ordering = ('lastname', 'position')
+        ordering = ('number', 'position')
         
     def __unicode__(self):
         return self.lastname
