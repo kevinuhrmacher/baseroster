@@ -7,7 +7,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 def team(request):
     team = Team.objects.all()
-    return render(request, "roster/home.html", team)
+    return render(request, "roster/home.html", {"teams":team})
 
 def player(request, pk):
     player_var = Player.objects.get(id=pk)

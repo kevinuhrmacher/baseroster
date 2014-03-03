@@ -204,6 +204,27 @@ a {
     margin-bottom: 50px;
 }
 
+/* team page */
+
+.teamcapsule {
+    border-bottom: solid 1px #C9C8C8;
+    height: 30px;
+    padding: 5px 0 0 0;
+}
+
+.teamname {
+    font-size: 1em;
+    font-weight: 700;
+}
+
+.men {
+    margin: 0 0 0px 0;
+}
+
+.women {
+    margin: 50px 0 0 0;
+}
+
 /* twitter footer */
 
 #twitterfooter {
