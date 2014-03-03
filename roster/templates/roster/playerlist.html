@@ -23,7 +23,7 @@
         <h3>Roster</h3>
         {% for player in players %}
             <div class="col-md-3 teamcapsule">
-                <span class="teamname">{{ player.number }}</span>&nbsp&nbsp<span><a href="{{ player.pk }}">{{ player.firstname }} {{ player.lastname }}</a></span>
+                <span class="teamname">{{ player.number }}</span>&nbsp&nbsp<span><a href="{{ player.pk }}">{{ player.firstname }} {{ player.lastname }}</a></span>&nbsp&nbsp<span>{{ player.position }}</span>
             </div>
         {% endfor %}
     </div>
