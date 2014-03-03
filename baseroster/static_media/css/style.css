@@ -22,6 +22,11 @@ a {
     color: #609CCC;
 }
 
+a:hover {
+    color: #609CCC;
+    text-decoration: none;
+}
+
 #playercontent {
     background-color: #FFFFFF;
     margin: 50px;
