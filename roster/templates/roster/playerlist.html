@@ -1,15 +1,25 @@
 <!DOCTYPE html>
+{% extends "base.html" %}
+{% load url from future %}
 
+{% block content %}
 <html>
-<head>
-    <title>Baseball Roster</title>
-</head>
-
 <body>
-    <div class="row">
-        <h1>Players and Coaches</h1>
-        <p>Try 2.</p>
-        <p>{{ player.name }} players.</p>
+
+<div class="player-image">
+    <!--<span class="playernumber hidden-phone">{{ player.firstname }}</span>
+    <span class="playername hidden-phone">{{ player.lastname }}</span>-->
+    <div id=playerimgbox"><img src="{{ STATIC_URL }}img/team.jpg" width="100%" class="player-image"></div>
+    <div class="caption">PHOTOS FROM GOHEELS.COM</div>
+</div>
+    
+<div id="playercontent">
+    <div class="row" id="basicinfo">
+        <div class="col-md-12">
+            <div>
+                <h2 class="basicinfohed">Teams</h2>
+            </div>
+        </div>
     </div>
-</body>    
-</html>
+    
+{% endblock %}

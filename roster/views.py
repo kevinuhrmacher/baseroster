@@ -9,6 +9,12 @@ def team(request):
     team = Team.objects.all()
     return render(request, "roster/home.html", {"teams":team})
 
+def playerList(request):
+    player = Player.objects.all()
+    return render(request, "roster/playerlist.html", {"players":player})
+    coach = Coach.objects.all()
+    return render(request, "roster/playerlist.html", {"coaches":coach})
+
 def player(request, pk):
     player_var = Player.objects.get(id=pk)
     context ={
@@ -23,4 +29,3 @@ def coach(request, pk):
         "coach":coach_var
     }
     return render(request, "roster/coach.html", context)
-
