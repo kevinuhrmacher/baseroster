@@ -4,7 +4,7 @@
 
 {% block content %}
 <html>
-    
+<body>
     <div class="player-image">
     <!--<span class="playernumber hidden-phone">{{ player.firstname }}</span>
     <span class="playername hidden-phone">{{ player.lastname }}</span>-->
@@ -22,7 +22,9 @@
     
     <ul>
     {% for team in teams %}
-        <li><a href="{{ team.name }}"></a></li>
+        <li>{{ team.name }}</li>
+        <li>{{ team.gender }}</li>
+    {% endif %}
     </ul>
     
     <div class="col-md-2">
@@ -35,7 +37,6 @@
 <div class="col-md-12 bottomspace">
     <p class="coachsaga">{{ coach.story }}</p>
 </div>
-   
+   {% endblock %}
 </body>
 </html>
-{% endblock %}
