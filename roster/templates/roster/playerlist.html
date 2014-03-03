@@ -32,7 +32,7 @@
         <h3>Coaches</h3>
         {% for coach in coaches %}
             <div class="col-md-12 teamcapsule">
-               <span class="teamname">{{ coach.firstname }}&nbsp{{ coach.lastname }}</span>&nbsp&nbsp<span><a href="#">{{ coach.title }}</a></span>
+               <span class="teamname">{{ coach.firstname }}&nbsp{{ coach.lastname }}</span>&nbsp&nbsp<span><a href="{% url 'roster_home' %}coach/{{ coach.pk }}">{{ coach.title }}</a></span>
             </div>
         {% endfor %}
     </div>
